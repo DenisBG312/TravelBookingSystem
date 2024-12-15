@@ -1,0 +1,76 @@
+﻿@model TravelBookingSystem.Web.ViewModels.Destination.DestinationDetailsViewModel
+
+@{
+    ViewData["Title"] = @Model.Name;
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <img src="@Model.ImageUrl" 
+             class="card-img-top" 
+             alt="Destination Image" 
+             style="max-height: 300px; object-fit: cover;">
+        <div class="card-body">
+            <h2 class="card-title">@Model.Name</h2>
+            <h5 class="text-muted">@Model.Country</h5>
+            <p class="card-text">@Model.Description</p>
+            <p><strong>Average Rating:</strong> ⭐ @Model.Rating / 5</p>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h3>Reviews</h3>
+        @if (Model.Reviews.Any())
+        {
+            foreach (var review in Model.Reviews)
+            {
+                <div class="media mb-4">
+                    <img src="@review.User.ProfileImageUrl" class="mr-3 rounded-circle" alt="User Image" width="80" height="80">
+                    <div class="media-body">
+                        <h5 class="mt-0">@review.User.FirstName @review.User.LastName</h5>
+                        <p>@review.Comment</p>
+                        <small class="text-muted">
+                            ⭐ @review.Rating / 5 | Reviewed on @review.ReviewDate.ToShortDateString()
+                        </small>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No reviews available for this destination.</p>
+        }
+    </div>
+
+    <div class="mt-5">
+        <h3>Available Trips</h3>
+        @if (Model.Trips.Any())
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Price</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var trip in Model.Trips)
+                    {
+                        <tr>
+                            <td>@trip.StartDate.ToShortDateString()</td>
+                            <td>@trip.EndDate.ToShortDateString()</td>
+                            <td>$@trip.Price</td>
+                            <td>@trip.TripType</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No trips available for this destination.</p>
+        }
+    </div>
+</div>

@@ -25,4 +25,12 @@
     <ProjectReference Include="..\TravelBookingSystem.Web.ViewModels\TravelBookingSystem.Web.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Destination\Create.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Destination\Create.cshtml" />
+  </ItemGroup>
+
 </Project>

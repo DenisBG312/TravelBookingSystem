@@ -20,7 +20,7 @@ namespace TravelBookingSystem.Data.Models
         [MaxLength(60)]
         public string Country { get; set; } = null!;
         [Required]
-        [MaxLength(60)]
+        [MaxLength(300)]
         public string Description { get; set; } = null!;
         [Required]
         public string ImageUrl { get; set; } = null!;

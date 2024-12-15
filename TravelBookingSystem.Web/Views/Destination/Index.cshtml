@@ -16,6 +16,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@destination.Name</h5>
                     <p class="card-text">@destination.Description</p>
+                    <p>Located in: <strong>@destination.Country</strong></p>
                     <a asp-controller="Destination" asp-action="Details" asp-route-id="@destination.Id" class="btn btn-primary">View Details</a>
                 </div>
             </div>
