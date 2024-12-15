@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TravelBookingSystem.Data\TravelBookingSystem.Data.csproj" />
+    <ProjectReference Include="..\TravelBookingSystem.Web.ViewModels\TravelBookingSystem.Web.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
