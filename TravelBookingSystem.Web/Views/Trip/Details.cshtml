@@ -1,0 +1,15 @@
+﻿@model TravelBookingSystem.Web.ViewModels.Trip.TripDetailsViewModel
+
+<div class="container mt-4">
+    <h1>Trip Details</h1>
+    <div class="card shadow">
+        <div class="card-body">
+            <h2>@Model.DestinationName</h2>
+            <p><strong>Start Date:</strong> @Model.StartDate.ToShortDateString()</p>
+            <p><strong>End Date:</strong> @Model.EndDate.ToShortDateString()</p>
+            <p><strong>Price:</strong> $@Model.Price</p>
+            <p><strong>Type:</strong> @Model.TripType</p>
+        </div>
+    </div>
+    <a href="@Url.Action("Index", "Trip")" class="btn btn-secondary mt-3">Back to Trips</a>
+</div>

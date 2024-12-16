@@ -1,0 +1,33 @@
+﻿@model IEnumerable<TravelBookingSystem.Web.ViewModels.Trip.TripIndexViewModel>
+
+<div class="container mt-4">
+    <h1>Trips</h1>
+    <a class="btn btn-primary mb-3" href="@Url.Action("Create", "Trip")">Create Trip</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Destination</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var trip in Model)
+        {
+            <tr>
+                <td>@trip.DestinationName</td>
+                <td>@trip.StartDate.ToShortDateString()</td>
+                <td>@trip.EndDate.ToShortDateString()</td>
+                <td>$@trip.Price</td>
+                <td>@trip.TripType</td>
+                <td>
+                    <a class="btn btn-info btn-sm" href="@Url.Action("Details", "Trip", new { id = trip.Id })">Details</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

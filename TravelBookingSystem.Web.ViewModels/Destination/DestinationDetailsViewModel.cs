@@ -18,6 +18,6 @@ namespace TravelBookingSystem.Web.ViewModels.Destination
         public decimal PricePerNight { get; set; }
         public double Rating { get; set; }
         public List<Review> Reviews { get; set; }
-        public List<Trip> Trips { get; set; }
+        public List<Data.Models.Trip> Trips { get; set; }
     }
 }
